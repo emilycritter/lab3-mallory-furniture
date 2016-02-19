@@ -13,6 +13,9 @@ Rails.application.routes.draw do
 
   get "/products" => 'products#index'
   get "/products/:pid" => 'products#view'
+  get "/locations/:location" => 'products#location'
+  get "/categories/:category" => 'products#category'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -16,16 +16,7 @@
 <nav class="well">
   <div class="container">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Location <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">North</a></li>
-            <li><a href="#">South</a></li>
-            <li><a href="#">West</a></li>
-          </ul>
-        </li>
-      </ul>
+      <%= render "shared/menu" %>
       <form class="navbar-form navbar-left" role="search" action="#" method="get">
         <div class="form-group">
           <label for="search_text">Search Text</label>

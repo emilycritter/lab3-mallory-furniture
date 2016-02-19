@@ -2,25 +2,11 @@ require 'csv'
 
 class ProductsController < ApplicationController
   def index
-    # @products = fetch_products
-
-    @products_bedroom = products_by_category("bedroom")
-    @products_desk = products_by_category("desk")
-    @products_misc = products_by_category("misc")
-    @products_seating = products_by_category("seating")
-    @products_storage = products_by_category("storage")
-    @products_table = products_by_category("table")
-    @products = products_by_category("")
+    @products = fetch_products
 
     if params[:search_text].present?
       @products = @products.select{|product| product.item.downcase.include? params[:search_text].downcase}
     end
-
-    # @categories = @products.map{|product| product.category}.uniq
-    # @products_category = []
-    # @categories.each do |category|
-    #   @products_category << products_by_category(category)
-    # end
 
   end
 
@@ -36,6 +22,22 @@ class ProductsController < ApplicationController
     else
       @output_msg = "Other #{@product.category} products at this location: #{@products_location.join(", ")}"
     end
+  end
+
+  def location
+    @products = fetch_products.select{|product| product.location == params[:location]}
+    if @products.nil?
+      render text: "Product not found.", status: 404
+    end
+    render :index
+  end
+
+  def category
+    @products = fetch_products.select{|product| product.category == params[:category]}
+    if @products.nil?
+      render text: "Product not found.", status: 404
+    end
+    render :index
 
   end
 
