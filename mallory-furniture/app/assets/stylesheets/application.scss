@@ -1,0 +1,22 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'products';
+@import 'home';
+
+$banner-color: #2E3E4F;
+$banner-font: #FEFEF7;
+
+header {
+  background-color: $banner-color;
+  color: $banner-font;
+  margin: 0 auto;
+  font-size: 26px;
+  line-height: 64px;
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+body {
+  padding-top: 20px;
+}

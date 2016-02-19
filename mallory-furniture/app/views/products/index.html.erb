@@ -1,0 +1,87 @@
+<div class="home-return">
+  <ul>
+  <li>
+    <a href="/">
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    </a>
+  </li>
+  <li>
+    <a href="/">
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    </a>
+  </li>
+  </ul>
+</div>
+
+<nav class="well">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Location <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">North</a></li>
+            <li><a href="#">South</a></li>
+            <li><a href="#">West</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search" action="#" method="get">
+        <div class="form-group">
+          <label for="search_text">Search Text</label>
+          <input type="text" name="search_text" value="" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div>
+</nav>
+
+
+<div class="container">
+  <% if @products.empty? %>
+    <div class="alert alert-info">
+      <em>No Contacts Found for "<%= params[:search_text] %>"</em>
+    </div>
+
+  <% else %>
+    <p>
+      <em><%= pluralize @products.count, 'product' %> found</em>
+    </p>
+  <% end %>
+
+  <% @products.each_with_index do |product, i| %>
+    <% if (i+1)%4 == 0 %>
+      <div class="row">
+    <% end %>
+    <div class="col-sm-12 col-md-3">
+      <div class="thumbnail">
+        <%= image_tag "products/#{product.img_file}.jpg" %>
+        <div class="caption">
+          <h4><%= product.item %></h4>
+          <% if product.discount_price != product.price.to_f %>
+            <div class="discount">
+              <p>
+                <span>$<%= product.price %></span><br>Sale price: <%= product.formatted_number(product.discount_price.to_f) %>
+              </p>
+            </div>
+          <% else %>
+            <p>
+              $<%= product.price %>
+            </p>
+          <% end %>
+
+          <p>
+            <a href="/products/<%= product.pid %>" class="btn btn-default" role="button">More Info</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% if i%4 == 3 %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+<!--
+<%= debug params %> -->

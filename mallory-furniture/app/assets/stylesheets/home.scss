@@ -1,0 +1,24 @@
+$font-color: #0D0A11;
+.jumbotron {
+  background-image: url('./home-background.jpg');
+  margin-bottom: 0px;
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: right;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bolder;
+  color: $font-color;
+  h2 {
+    padding-right: 20px;
+    padding-bottom: 15px;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+  }
+  h4 {
+    padding-right: 20px;
+  }
+  p {
+    padding-right: 20px;
+  }
+}

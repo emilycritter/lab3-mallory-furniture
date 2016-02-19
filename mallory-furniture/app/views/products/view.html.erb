@@ -1,0 +1,54 @@
+<div class="home-return">
+  <ul>
+  <li>
+    <a href="/">
+      <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    </a>
+  </li>
+  <li>
+    <a href="/products">
+      <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+    </a>
+  </li>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <%= image_tag "products/#{@product.img_file}.jpg", class: "img-responsive"%>
+    </div>
+
+    <div class="col-md-4">
+      <h2><%= @product.item %></h1>
+      <h3 class="price">Price</h3>
+      <% if @product.discount_price != @product.price.to_f %>
+        <div class="discount">
+          <p>
+            <span>$<%= @product.price %></span><br>Sale price: <%= @product.formatted_number(@product.discount_price.to_f) %>
+          </p>
+        </div>
+      <% else %>
+        <p>
+          $<%= @product.price %>
+        </p>
+      <% end %>
+      <h3>Description</h3>
+      <p>
+        <%= @product.description %>
+      </p>
+      <h3>Dimensions</h3>
+      <p>
+        Width: <%= @product.dimension_w %>
+      </p>
+      <p>
+        Length: <%= @product.dimension_l %>
+      </p>
+      <p>
+        Height: <%= @product.dimension_h %>
+      </p>
+      <em><br><%= @output_msg %></em>
+    </div>
+</div>
+<!--
+<%= debug params %> -->
