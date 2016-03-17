@@ -33,6 +33,9 @@ After completing this assignment you should be able to
 There should be 3 types of pages: the home page, a page that shows multiple-products, and a single-product page. Your Rails app should handle the routing, controller logic, and view rendering based on how the user navigates the site.
 
 In the controller, some data manipulation is required.
+![alt text](http://i.imgur.com/WbNrZty.jpg)
+![alt text](http://i.imgur.com/okoKknI.jpg)
+![alt text](http://i.imgur.com/7Uoyhoa.png)
 
 home multi-listing single
 1. Create a Product class with attributed matching the CSV file.
