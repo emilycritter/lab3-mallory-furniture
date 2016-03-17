@@ -57,5 +57,5 @@ Items with PID's between 100-199 will go to the North location, items with PID's
   * _e.g. "additional {category} at this location: {item1} {item2} {item3}"._
 
 ## Resources
-* Images, CSV file, and background image, Screenshots: https://www.dropbox.com/sh/zsqwxh22g6zhjsp/AAB_dnT9Keof083nFpxDTbJ_a?dl=0
-* Video Prep
+* Images, CSV file, and background image, Screenshots: [https://www.dropbox.com/sh/zsqwxh22g6zhjsp/AAB_dnT9Keof083nFpxDTbJ_a?dl=0](https://www.dropbox.com/sh/zsqwxh22g6zhjsp/AAB_dnT9Keof083nFpxDTbJ_a?dl=0)
+* [Video Prep](https://vimeo.com/139012189)
